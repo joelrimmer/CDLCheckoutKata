@@ -2,6 +2,7 @@ package org.example;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
@@ -43,4 +44,15 @@ public class CSVReaderTest {
     assertFalse(offerRuleMap.containsKey("D"));
 
   }
+
+  @Test
+  public void throwExceptionWhenCSVHasEmptyLines() throws IllegalArgumentException {
+
+    assertThrows(IllegalArgumentException.class, () -> {
+      CSVReader.getPricingInfo("pricesInvalid.csv");
+    });
+
+  }
+
+
 }
