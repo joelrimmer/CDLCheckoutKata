@@ -1,8 +1,7 @@
 package org.example;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Before;
@@ -16,7 +15,7 @@ public class CheckoutTest {
 
   @Before
   public void populateCheckoutItems() {
-     Map<String, Double> pricingRuleMap = new HashMap<>();
+    Map<String, Double> pricingRuleMap = new HashMap<>();
     pricingRuleMap.put("A", 0.50);
     pricingRuleMap.put("B", 0.30);
     pricingRuleMap.put("C", 0.20);
@@ -28,7 +27,7 @@ public class CheckoutTest {
   }
 
   @Test
-  public void calculateOneA() throws IOException {
+  public void calculateOneA() {
     shoppingBasket.put("A", 1);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
     Double total = checkout.calculateTotal();
@@ -37,7 +36,7 @@ public class CheckoutTest {
 
 
   @Test
-  public void calculateThreeAs() throws IOException {
+  public void calculateThreeAs() {
     shoppingBasket.put("A", 3);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
     Double total = checkout.calculateTotal();
@@ -45,7 +44,7 @@ public class CheckoutTest {
   }
 
   @Test
-  public void calculateOneB() throws IOException {
+  public void calculateOneB() {
     shoppingBasket.put("B", 1);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
     Double total = checkout.calculateTotal();
@@ -53,7 +52,7 @@ public class CheckoutTest {
   }
 
   @Test
-  public void calculateTwoBs() throws IOException {
+  public void calculateTwoBs() {
     shoppingBasket.put("B", 2);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
     Double total = checkout.calculateTotal();
@@ -61,7 +60,7 @@ public class CheckoutTest {
   }
 
   @Test
-  public void calculateOneC() throws IOException {
+  public void calculateOneC() {
     shoppingBasket.put("C", 1);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
     Double total = checkout.calculateTotal();
@@ -69,7 +68,7 @@ public class CheckoutTest {
   }
 
   @Test
-  public void calculateComplexBasket() throws IOException {
+  public void calculateComplexBasket() {
     shoppingBasket.put("A", 7);
     shoppingBasket.put("B", 4);
     shoppingBasket.put("C", 1);

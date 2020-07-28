@@ -1,9 +1,7 @@
 package org.example;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
-import lombok.Data;
 
 public class PricingRule {
 
@@ -15,7 +13,7 @@ public class PricingRule {
 
   public void displayPricing() {
     System.out.println("The pricing for this transaction is as follows: ");
-    for (Map.Entry<String, Double> entry: this.priceListMap.entrySet()) {
+    for (Map.Entry<String, Double> entry : this.priceListMap.entrySet()) {
       System.out.println("Price for product " + entry.getKey() + " is £" + entry.getValue());
     }
   }

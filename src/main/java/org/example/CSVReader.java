@@ -45,15 +45,13 @@ public class CSVReader {
 
     String[] parts = line.split(",");
 
-    String product = parts[0];
-    return product;
+    return parts[0];
   }
 
   private static Double convertLineToPrice(String line) {
 
     String[] parts = line.split(",");
-    Double price = Double.valueOf(parts[1]);
-    return price;
+    return Double.valueOf(parts[1]);
   }
 
   private static OfferRule convertLineToOffer(String line) {
