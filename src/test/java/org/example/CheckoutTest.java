@@ -30,6 +30,7 @@ public class CheckoutTest {
   public void calculateOneA() {
     shoppingBasket.put("A", 1);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
+    checkout.setShoppingBasket(shoppingBasket);
     Double total = checkout.calculateTotal();
     assertEquals(Double.valueOf(0.5), total);
   }
@@ -39,6 +40,7 @@ public class CheckoutTest {
   public void calculateThreeAs() {
     shoppingBasket.put("A", 3);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
+    checkout.setShoppingBasket(shoppingBasket);
     Double total = checkout.calculateTotal();
     assertEquals(Double.valueOf(1.30), total);
   }
@@ -47,6 +49,7 @@ public class CheckoutTest {
   public void calculateOneB() {
     shoppingBasket.put("B", 1);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
+    checkout.setShoppingBasket(shoppingBasket);
     Double total = checkout.calculateTotal();
     assertEquals(Double.valueOf(0.30), total);
   }
@@ -55,6 +58,7 @@ public class CheckoutTest {
   public void calculateTwoBs() {
     shoppingBasket.put("B", 2);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
+    checkout.setShoppingBasket(shoppingBasket);
     Double total = checkout.calculateTotal();
     assertEquals(Double.valueOf(0.45), total);
   }
@@ -63,6 +67,7 @@ public class CheckoutTest {
   public void calculateOneC() {
     shoppingBasket.put("C", 1);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
+    checkout.setShoppingBasket(shoppingBasket);
     Double total = checkout.calculateTotal();
     assertEquals(Double.valueOf(0.20), total);
   }
@@ -74,6 +79,7 @@ public class CheckoutTest {
     shoppingBasket.put("C", 1);
     shoppingBasket.put("D", 2);
     Checkout checkout = new Checkout(pricingRule, offerRuleMap);
+    checkout.setShoppingBasket(shoppingBasket);
     Double total = checkout.calculateTotal();
     assertEquals(Double.valueOf(4.50), total);
   }
