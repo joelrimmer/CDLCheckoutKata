@@ -1,6 +1,6 @@
-#CheckoutKata
+# CheckoutKata
 
-###General
+### General
 
 This program implements code for a checkout system that 
 handles pricing schemes such as “apples cost 50 pence, three apples cost £1.30.”
@@ -17,7 +17,7 @@ For demo purposes the prices used are those outlined in the brief:
 |C|	20|	
 |D|	15|	
 
-###Using the program
+### Using the program
 Upon running the program the pricing and offers will display to the user.
 
 Following the display of the pricing, users will be prompted in the console to input a single shopping item to 'scan'.
