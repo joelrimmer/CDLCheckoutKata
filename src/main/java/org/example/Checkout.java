@@ -82,23 +82,23 @@ public class Checkout {
 
     double totalCost = 0.00;
 
-    for (Entry<String, Integer> productItem : this.shoppingBasket.entrySet()) {
+    for (Entry<String, Integer> shoppingItem : this.shoppingBasket.entrySet()) {
 
-      if (offerRuleMap.containsKey(productItem.getKey())) {
-        if (productItem.getValue() >= offerRuleMap.get(productItem.getKey()).getQuantity()) {
+      if (offerRuleMap.containsKey(shoppingItem.getKey())) {
+        if (shoppingItem.getValue() >= offerRuleMap.get(shoppingItem.getKey()).getQuantity()) {
           totalCost +=
-              (productItem.getValue() % offerRuleMap.get(productItem.getKey()).getQuantity())
-                  * this.pricingRule.getPriceForProduct(productItem.getKey()) +
-                  (productItem.getValue() / offerRuleMap.get(productItem.getKey()).getQuantity())
-                      * offerRuleMap.get(productItem.getKey()).getOfferPrice();
+              (shoppingItem.getValue() % offerRuleMap.get(shoppingItem.getKey()).getQuantity())
+                  * this.pricingRule.getPriceForProduct(shoppingItem.getKey()) +
+                  (shoppingItem.getValue() / offerRuleMap.get(shoppingItem.getKey()).getQuantity())
+                      * offerRuleMap.get(shoppingItem.getKey()).getOfferPrice();
         } else {
           totalCost +=
-              productItem.getValue() * this.pricingRule.getPriceForProduct(productItem.getKey());
+              shoppingItem.getValue() * this.pricingRule.getPriceForProduct(shoppingItem.getKey());
         }
 
       } else {
         totalCost +=
-            productItem.getValue() * this.pricingRule.getPriceForProduct(productItem.getKey());
+            shoppingItem.getValue() * this.pricingRule.getPriceForProduct(shoppingItem.getKey());
       }
 
     }
